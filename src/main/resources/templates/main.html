@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ganie Music</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav {
+      background-color: #444;
+      color: #fff;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+    }
+
+    .main-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .featured-music {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .music-card {
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+      width: 300px;
+    }
+
+    .music-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .music-card h3 {
+      margin-top: 10px;
+    }
+
+    .music-card p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Ganie Music</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="/music">음악 차트</a></li>
+    <li><a href="#">플레이리스트</a></li>
+    <li><a href="#">검색</a></li>
+    <li><a href="/update">회원정보 수정</a></li>
+    <li><a href="/logout">로그아웃</a></li>
+  </ul>
+</nav>
+<div class="main-content">
+  <h2>추천 음악</h2>
+  <div class="featured-music">
+    <div th:each="music : ${recommendedMusic}" class="music-card">
+      <img th:src="${music.image}" th:alt="${music.title}"/>
+      <h3 th:text="${music.title}"></h3>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

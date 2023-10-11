@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>회원 정보 수정</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 80%;
+      padding: 10px;
+      margin: 0 auto; /* 가운데 정렬 */
+      display: block; /* 블록 레벨 요소로 변경 */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 8px 16px; /* 버튼 크기 조정 */
+      font-size: 16px; /* 폰트 크기 조정 */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block; /* 블록 레벨 요소로 변경 */
+      margin: 0 auto 10px auto; /* 가운데 정렬과 아래 마진 추가 */
+      width: 50%; /* 가로 폭 조정 (원하는 크기로 조절) */
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>회원 정보 수정</h2>
+  <form action="/update" method="post">
+    <input type="text" id="userEmail" name="userEmail" th:value="${userEmail}" placeholder="이메일" required>
+    <input type="text" id="userPhone" name="userPhone" th:value="${userPhone}" placeholder="전화번호" required>
+    <input type="text" id="userPw" name="userPw" th:value="${userPw}" placeholder="비밀번호" required>
+      <button type="submit">저장</button>
+  </form>
+  <form action="/delete" method="post"> <!-- 회원 탈퇴 버튼 추가 -->
+    <button type="submit" style="background-color: #f44336;">회원 탈퇴</button>
+  </form>
+</div>
+</body>
+</html>

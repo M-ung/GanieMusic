@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ganie Music 회원가입</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 5px;
+      width: 350px;
+      text-align: center;
+    }
+
+    .signup-container h2 {
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .signup-button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .signup-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+<div class="signup-container">
+  <h2>Ganie Music 회원가입</h2>
+  <form action="/signup" method="post">
+    <div class="input-group">
+      <input type="email" id="userEmail" name="userEmail" placeholder="이메일">
+    </div>
+    <div class="input-group">
+      <input type="password" id="userPw" name="userPw" placeholder="비밀번호">
+    </div>
+    <div class="input-group">
+      <input type="phone" id="userPhone" name="userPhone" placeholder="전화번호">
+    </div>
+    <button type="submit" class="signup-button">가입</button>
+  </form>
+</div>
+</body>
+</html>

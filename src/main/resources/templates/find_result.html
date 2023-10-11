@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>회원 정보 찾기 결과</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .find-user-result-container {
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 5px;
+      width: 350px;
+      text-align: center;
+    }
+
+    .find-user-result-container h2 {
+      margin-bottom: 20px;
+    }
+
+    .user-info {
+      margin-bottom: 20px;
+    }
+
+    .user-info label {
+      font-weight: bold;
+    }
+
+    .user-info span {
+      margin-left: 10px;
+    }
+
+    .no-user-info {
+      color: #f44336;
+    }
+
+    .back-button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+<div class="find-user-result-container">
+  <h2>회원 정보 찾기 결과</h2>
+  <div th:if="${user != null}" class="user-info">
+    <label>이메일:</label>
+    <span th:text="${user.userEmail}"></span>
+  </div>
+  <div th:if="${user != null}" class="user-info">
+    <label>비밀번호:</label>
+    <span th:text="${user.userPw}"></span>
+  </div>
+  <div th:if="${user != null}" class="user-info">
+    <label>전화번호:</label>
+    <span th:text="${user.userPhone}"></span>
+  </div>
+  <div th:if="${user == null}" class="no-user-info">
+    등록된 사용자가 없습니다.
+  </div>
+  <a href="/" class="back-button">뒤로가기</a>
+</div>
+</body>
+</html>
